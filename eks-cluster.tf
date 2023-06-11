@@ -17,10 +17,10 @@ data "aws_eks_cluster_auth" "myapp-cluster" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "19.15.0"
+  version = "18.14.0"
 
   cluster_name = "myapp-eks-cluster"  
-  cluster_version = "1.25"
+  cluster_version = "1.23"
 
   subnet_ids = module.myapp-vpc.private_subnets
   vpc_id = module.myapp-vpc.vpc_id
