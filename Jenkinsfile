@@ -5,11 +5,6 @@ pipeline {
         AWS_DEFAULT_REGION="us-east-2"     
     }
     stages {
-        stage('Git checkout') {
-            steps {
-                git 'https://github.com/austinobioma/deploy-eks-using-jenkins-terraform.git'
-            }
-        }
         
         stage('provision eks-cluster') {
            environment {
@@ -19,7 +14,6 @@ pipeline {
            steps {
               script {
                   sh "terraform init"
-                  sh "terraform validate"
                   sh "terraform plan"
                   sh " terraform apply --auto-approve"
             }
