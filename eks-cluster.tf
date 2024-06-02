@@ -17,7 +17,7 @@ data "aws_eks_cluster_auth" "myapp-cluster" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "18.14.0"
+  version = "20.0"
 
   cluster_name = "myapp-eks-cluster"  
   cluster_version = "1.29"
