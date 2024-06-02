@@ -37,7 +37,7 @@ module "eks" {
       desired_size = 3
 
       instance_types = ["t2.small"]
-      key_name       = "Feb-Class"
+      key_name       = "may_key"
     }
   }
 }
