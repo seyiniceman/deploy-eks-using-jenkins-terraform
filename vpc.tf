@@ -1,5 +1,8 @@
 provider "aws" {
     region = "us-east-2"
+    shared_config_files      = ["/Users/austi/.aws/conf"]
+    shared_credentials_files = ["/Users/austi/.aws/credentials"]
+    profile                  = "austin"
 }
 
 variable vpc_cidr_block {}
@@ -10,8 +13,8 @@ data "aws_availability_zones" "available" {}
 
 
 module "myapp-vpc" {
-    source = "terraform-aws-modules/vpc/aws"
-    version = "5.0.0"
+    source =   "terraform-aws-modules/vpc/aws"
+    version = "5.14.0"  #"5.0.0"
 
     name = "myapp-vpc"
     cidr = var.vpc_cidr_block
