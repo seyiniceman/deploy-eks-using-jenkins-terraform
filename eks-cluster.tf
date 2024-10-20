@@ -7,11 +7,13 @@ provider "kubernetes" {
 
 data "aws_eks_cluster" "myapp-cluster" {
     name = module.eks.cluster_name
+    depends_on = [module.eks]
 }
 
 
 data "aws_eks_cluster_auth" "myapp-cluster" {
     name = module.eks.cluster_name
+    depends_on = [module.eks]
 }
 output "cluster_id" {
   value = data.aws_eks_cluster.myapp-cluster.id
