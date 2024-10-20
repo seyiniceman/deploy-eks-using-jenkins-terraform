@@ -19,7 +19,7 @@ output "cluster_id" {
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.26.0" #"18.14.0"
+  version = "20.26.0" 
 
   cluster_name = "myapp-eks-cluster"
   cluster_version = "1.30"
@@ -44,4 +44,5 @@ module "eks" {
       key_name       = "may_key"
     }
   }
+depends_on = [module.myapp-vpc]
 }
