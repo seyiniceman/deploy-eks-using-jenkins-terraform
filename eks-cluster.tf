@@ -43,7 +43,7 @@ module "eks" {
       desired_size = 3
 
       instance_types = ["t2.small"]
-      key_name       = "may_key"
+      key_name       = "sfkeypair"
     }
   }
 depends_on = [module.myapp-vpc]
